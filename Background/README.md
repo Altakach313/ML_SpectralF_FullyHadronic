@@ -14,7 +14,7 @@ Then, we run delphes (master version) on the hepmc file to obtain the root file:
 ```
 The "delphes_card_ATLAS.tcl" can be found in "Delphes_master/"
 
-We then read the root file using the macro "ReadDelphesJets.C" in order to produce a TTree with the necessary leafs (spectral function, event HT, jets pT, jets masses, and the C param):
+We then read the root file using the macro "ReadDelphesJets.C" in order to produce a TTree with the necessary leafs (spectral function, event HT, jets pT, jets masses, and the C parameter):
 
 ```bash
 root -l -b -q "ReadDelphesJets.C"
