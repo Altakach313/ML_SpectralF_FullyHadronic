@@ -1,0 +1,13 @@
+import filename
+set spinmode none            # Use one of the madspin special mode
+set max_weight_ps_point 400  # number of PS to estimate the maximum for each event
+
+# specify the decay for the final state particles
+decay go > t t~ n1
+
+# do t t~ decay with Pythia 
+# decay w+ w- to j j with Pythia 
+
+
+# running the actual code
+launch

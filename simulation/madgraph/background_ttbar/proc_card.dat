@@ -1,0 +1,10 @@
+define j = g u c d s b u~ c~ d~ s~ b~ 
+generate p p > t t~ j j, (t > b W+ , W+ > j j), (t~ > b~ W- , W- > ta- vt~)
+add process p p > t t~ j j, (t > b W+ , W+ > ta+ vt), (t~ > b~ W- , W- > j j)
+add process p p > t t~ j j, (t > b W+ , W+ > ta+ vt), (t~ > b~ W- , W- > ta- vt~)
+output test
+launch
+set nevents 10000
+set ptj 30
+set use_syst False
+set maxjetflavor 4

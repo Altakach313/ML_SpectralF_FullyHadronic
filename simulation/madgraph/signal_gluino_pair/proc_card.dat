@@ -1,0 +1,50 @@
+import model MSSM_SLHA2-full
+define sq = ul~ cl~ t1~ ur~ cr~ t2~ dl~ sl~ b1~ dr~ sr~ b2~ ul cl t1 ur cr t2 dl sl b1 dr sr b2
+generate p p > go go / sq
+add process p p > go go j / sq
+
+output test
+launch
+set nevents 100000
+
+set mass 1000004 10000.0   # ~s_L (strange_L)
+set mass 1000003 10000.0   # ~c_L (charm_L)
+set mass 1000013 10000.0   # ~mu_L (muon_L)
+
+set Msd1 10000.0  
+set Msu1 10000.0  
+#set Msd2 10000.0  
+#set Msu2 10000.0  
+set Msd3 10000.0  
+set Msu3 10000.0  
+set Msl1 10000.0  
+set Msn1 10000.0  
+#set Msl2 10000.0  
+set Msn2 10000.0  
+set Msl3 10000.0  
+set Msn3 10000.0  
+set Mgo  2000.0 
+set Mneu1 200.0   
+set Mneu2 10000.0  
+set Mch1  10000.0 
+set Mneu3 10000.0  
+set Mneu4 10000.0  
+set Mch2  10000.0 
+set Msd4  10000.0 
+set Msu4  10000.0 
+set Msd5  10000.0 
+set Msu5  10000.0 
+set Msd6  10000.0 
+set Msu6  10000.0 
+set Msl4  10000.0 
+set Msl5  10000.0 
+set Msl6  10000.0 
+
+#set ptj1min 30
+#set ptj2min 30
+#set ptj3min 30
+#set ptj4min 30
+#set ptj 20
+#set htjmin 1300
+set use_syst False
+set maxjetflavor 5

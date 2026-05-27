@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.1",
+  "description": "Feature order for the public Keras models trained with all spectral-function bins.",
+  "model_family": "all_spectral_bins",
+  "model_files": [
+    "all_spectral_bins/model_1200.h5",
+    "all_spectral_bins/model_1600.h5",
+    "all_spectral_bins/model_2000.h5"
+  ],
+  "spectral_function": {
+    "count": 21,
+    "delta_r": 0.4,
+    "r_max": 8.4,
+    "columns": [
+      "SpectralFunc0",
+      "SpectralFunc1",
+      "SpectralFunc2",
+      "SpectralFunc3",
+      "SpectralFunc4",
+      "SpectralFunc5",
+      "SpectralFunc6",
+      "SpectralFunc7",
+      "SpectralFunc8",
+      "SpectralFunc9",
+      "SpectralFunc10",
+      "SpectralFunc11",
+      "SpectralFunc12",
+      "SpectralFunc13",
+      "SpectralFunc14",
+      "SpectralFunc15",
+      "SpectralFunc16",
+      "SpectralFunc17",
+      "SpectralFunc18",
+      "SpectralFunc19",
+      "SpectralFunc20"
+    ]
+  },
+  "default_model_features": [
+    "SpectralFunc0",
+    "SpectralFunc1",
+    "SpectralFunc2",
+    "SpectralFunc3",
+    "SpectralFunc4",
+    "SpectralFunc5",
+    "SpectralFunc6",
+    "SpectralFunc7",
+    "SpectralFunc8",
+    "SpectralFunc9",
+    "SpectralFunc10",
+    "SpectralFunc11",
+    "SpectralFunc12",
+    "SpectralFunc13",
+    "SpectralFunc14",
+    "SpectralFunc15",
+    "SpectralFunc16",
+    "SpectralFunc17",
+    "SpectralFunc18",
+    "SpectralFunc19",
+    "SpectralFunc20",
+    "jetspT0",
+    "jetspT1",
+    "jetspT2",
+    "jetspT3",
+    "jetspT4",
+    "eventHT"
+  ],
+  "available_training_variants": {
+    "no_spectral_function": [
+      "jetspT0",
+      "jetspT1",
+      "jetspT2",
+      "jetspT3",
+      "jetspT4",
+      "eventHT"
+    ],
+    "with_10_spectral_bins": [
+      "SpectralFunc0",
+      "SpectralFunc1",
+      "SpectralFunc2",
+      "SpectralFunc3",
+      "SpectralFunc4",
+      "SpectralFunc5",
+      "SpectralFunc6",
+      "SpectralFunc7",
+      "SpectralFunc8",
+      "SpectralFunc9",
+      "jetspT0",
+      "jetspT1",
+      "jetspT2",
+      "jetspT3",
+      "jetspT4",
+      "eventHT"
+    ]
+  },
+  "normalization": {
+    "method": "StandardScaler",
+    "note": "The public .h5 models were trained on standardized features. The scaler was fit on the training split before model training."
+  },
+  "label_column": "Label"
+}
