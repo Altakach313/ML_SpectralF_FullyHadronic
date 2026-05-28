@@ -57,6 +57,15 @@ Dense(1, activation="sigmoid")
 
 The output is a signal-like score between 0 and 1.
 
+## Testing the included files
+
+`test_models_from_repo.ipynb` demonstrates the minimal workflow for loading the
+included `.h5` files and checking that they produce scores for inputs with the
+correct feature order. The notebook uses
+`examples/model_ready_all_spectral_2000_test_sample.csv`, a small standardized
+sample from the 2000 GeV test set, and includes a section where users can
+provide their own model-ready, standardized feature table.
+
 ## Scope
 
 These models are provided for technical reuse and inspection of the workflow.

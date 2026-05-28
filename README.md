@@ -24,6 +24,11 @@ models/
                            Keras models trained with all 21 spectral bins
   feature_schema.json      Input feature ordering for the public models
   model_card.md            Technical model notes
+  test_models_from_repo.ipynb
+                           Notebook showing how to load and test the models
+examples/
+  model_ready_all_spectral_2000_test_sample.csv
+                           Small standardized test sample for model checks
 docs/                     Paper-facing availability text
 ```
 
@@ -193,6 +198,17 @@ Dense(1, sigmoid)
 ```
 
 For more detail, see `models/model_card.md`.
+
+To verify that the included model files can be loaded and used, open:
+
+```text
+models/test_models_from_repo.ipynb
+```
+
+The notebook uses the included model files, `models/feature_schema.json`, and
+the small standardized example file in `examples/`. It verifies that the `.h5`
+models load and produce scores, checks the 2000 GeV model on the example rows,
+and then shows where to plug in a user-provided standardized feature table.
 
 ## Batch helper
 
