@@ -3,7 +3,7 @@ define sq = ul~ cl~ t1~ ur~ cr~ t2~ dl~ sl~ b1~ dr~ sr~ b2~ ul cl t1 ur cr t2 dl
 generate p p > go go / sq
 add process p p > go go j / sq
 
-output test
+output signalGoGo
 launch
 set nevents 100000
 
@@ -23,7 +23,7 @@ set Msn1 10000.0
 set Msn2 10000.0  
 set Msl3 10000.0  
 set Msn3 10000.0  
-set Mgo  2000.0 
+set Mgo  900.0 
 set Mneu1 200.0   
 set Mneu2 10000.0  
 set Mch1  10000.0 
