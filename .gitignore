@@ -6,6 +6,7 @@ __pycache__/
 *.lhe.gz
 *.hepmc
 *.cmnd
+!simulation/pythia/pythia_lhef_template.cmnd
 *.csv
 !examples/*.csv
 logs/

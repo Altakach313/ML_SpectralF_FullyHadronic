@@ -1,0 +1,17 @@
+Main:numberOfEvents = {nevents}
+Main:timesAllowErrors = 5
+
+Init:showChangedSettings = off
+Init:showChangedParticleData = off
+
+Next:numberShowInfo = 1
+Next:numberShowProcess = 1
+Next:numberShowEvent = 1
+
+Beams:frameType = 4
+Beams:LHEF = {lhe_file}
+
+ProcessLevel:all = on
+PartonLevel:all = on
+PartonLevel:MPI = on
+HadronLevel:all = on
