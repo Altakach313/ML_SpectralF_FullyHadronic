@@ -210,6 +210,19 @@ the small standardized example file in `examples/`. It verifies that the `.h5`
 models load and produce scores, checks the 2000 GeV model on the example rows,
 and then shows where to plug in a user-provided standardized feature table.
 
+For command-line inference on a model-ready CSV, use:
+
+```bash
+python models/example_inference.py \
+  --model models/all_spectral_bins/model_2000.h5 \
+  --input examples/model_ready_all_spectral_2000_test_sample.csv \
+  --output scored_events.csv
+```
+
+The input CSV must contain the feature columns listed in
+`models/feature_schema.json` and must already use the same standardization
+convention as the training arrays.
+
 ## Batch helper
 
 The helper script:
