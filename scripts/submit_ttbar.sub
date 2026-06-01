@@ -1,0 +1,15 @@
+executable              = scripts/run_everything.sh
+arguments               = $(ClusterID) $(ProcId) background_ttbar 1000000
+getenv                  = REPO_DIR
+
+transfer_input_files    = simulation/madgraph/background_ttbar/proc_card.dat
+transfer_output_files   = ttbarBackground_$(ProcId).root
+when_to_transfer_output = ON_EXIT
+
+output                  = logs/output/ttbar.$(ClusterId).$(ProcId).out
+error                   = logs/error/ttbar.$(ClusterId).$(ProcId).err
+log                     = logs/ttbar.$(ClusterId).log
+
++JobFlavour             = "tomorrow"
+
+queue 500

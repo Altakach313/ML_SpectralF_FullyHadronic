@@ -59,8 +59,9 @@ variables so the workflow can be adapted to another installation.
 ## Event generation
 
 The same production workflow is used for the gluino-pair signal and the `ttbar`
-background. The helper script exposes the sample choice as an argument and then
-selects the appropriate MadGraph cards, Pythia settings, and Delphes card.
+background. The helper script exposes the sample choice as an argument and is
+used by the separate signal and background HTCondor submit files to run the
+corresponding MadGraph, Pythia, and Delphes chain.
 
 ### Signal: gluino pair
 
@@ -232,19 +233,21 @@ scripts/run_everything.sh
 ```
 
 shows the end-to-end production sequence for MadGraph, optional MadSpin, Pythia,
-and Delphes.
+and Delphes. In batch production, the submit files transfer the relevant
+MadGraph cards into the job working directory before this script runs.
 
 Example:
 
 ```bash
-scripts/run_everything.sh 0 0 background_ttbar
-scripts/run_everything.sh 0 0 signal_gluino_pair 2000
+scripts/run_everything.sh 0 0 background_ttbar 1000000
+scripts/run_everything.sh 0 0 signal_gluino_pair 100000 true 2000
 ```
 
-The HTCondor submit description is:
+The HTCondor submit descriptions are:
 
 ```text
-scripts/submit_delphes.sub
+scripts/submit_ttbar.sub
+scripts/submit_gogo.sub
 ```
 
 ## Data and code availability

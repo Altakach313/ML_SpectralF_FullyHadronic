@@ -1,0 +1,32 @@
+executable              = scripts/run_everything.sh
+arguments               = $(ClusterID) $(ProcId) signal_gluino_pair 100000 true $(gluino_mass)
+getenv                  = REPO_DIR
+
+transfer_input_files    = simulation/madgraph/signal_gluino_pair/proc_card.dat, simulation/madgraph/signal_gluino_pair/madspin_card.dat
+transfer_output_files   = signalGoGo_$(gluino_mass)_$(ProcId).root
+when_to_transfer_output = ON_EXIT
+
+output                  = logs/output/signalGoGo_$(gluino_mass).$(ClusterId).$(ProcId).out
+error                   = logs/error/signalGoGo_$(gluino_mass).$(ClusterId).$(ProcId).err
+log                     = logs/signalGoGo_$(gluino_mass).$(ClusterId).log
+
++JobFlavour             = "workday"
+
+queue 42 gluino_mass from (
+  900
+  1000
+  1100
+  1200
+  1300
+  1400
+  1500
+  1600
+  1700
+  1800
+  2000
+  2200
+  2400
+  2600
+  2800
+  3000
+)
