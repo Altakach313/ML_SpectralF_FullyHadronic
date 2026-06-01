@@ -157,11 +157,9 @@ features:
 SpectralFunc0, SpectralFunc1, ..., SpectralFunc20.
 ```
 
-The ML-ready event tables also contained standard event and jet observables,
-including `eventHT`, leading-jet transverse momenta, jet masses, missing
-transverse energy, b-jet multiplicity, `deltaPhi`, `mTbjet`, and the event-shape
-`C` parameter. The public trained models included here use the 21 spectral bins,
-the first five jet transverse momenta, and `eventHT`.
+The public trained models included here use 27 inputs: the 21 spectral-function
+bins, the first five leading-jet transverse momenta, and `eventHT`. The required
+feature order is given in `models/feature_schema.json`.
 
 ## Machine-learning models
 

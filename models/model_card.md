@@ -24,10 +24,9 @@ features:
 - `jetspT0` through `jetspT4`
 - `eventHT`
 
-The full intermediate data tables also included additional observables such as
-jet masses, missing transverse energy, b-jet multiplicity, `deltaPhi`, `mTbjet`,
-and the event-shape `C` parameter, but those are not inputs to the public
-all-spectral-function `.h5` models.
+The required feature order is recorded in `feature_schema.json`; users should
+provide model-ready inputs with exactly these columns and the same
+standardization convention.
 
 ## Preprocessing
 
