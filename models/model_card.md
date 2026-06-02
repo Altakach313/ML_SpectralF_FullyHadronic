@@ -2,13 +2,21 @@
 
 ## Included models
 
-This repository includes the Keras models trained with all 21
+This repository includes the Keras models trained with the first 10
 spectral-function bins:
 
 ```text
-all_spectral_bins/model_1200.h5
-all_spectral_bins/model_1600.h5
-all_spectral_bins/model_2000.h5
+with_10_spectral_bins/model_1000.h5
+with_10_spectral_bins/model_1200.h5
+with_10_spectral_bins/model_1400.h5
+with_10_spectral_bins/model_1600.h5
+with_10_spectral_bins/model_1800.h5
+with_10_spectral_bins/model_2000.h5
+with_10_spectral_bins/model_2200.h5
+with_10_spectral_bins/model_2400.h5
+with_10_spectral_bins/model_2600.h5
+with_10_spectral_bins/model_2800.h5
+with_10_spectral_bins/model_3000.h5
 ```
 
 The mass labels denote the gluino signal mass in GeV. Each model is a binary
@@ -17,16 +25,20 @@ the `ttbar` background sample.
 
 ## Inputs
 
-The feature order is defined in `feature_schema.json`. The public models use 27
+The feature order is defined in `feature_schema.json`. The public models use 16
 features:
 
-- `SpectralFunc0` through `SpectralFunc20`
+- `SpectralFunc0` through `SpectralFunc9`
 - `jetspT0` through `jetspT4`
 - `eventHT`
 
 The required feature order is recorded in `feature_schema.json`; users should
 provide model-ready inputs with exactly these columns and the same
 standardization convention.
+
+The full spectral function was initially constructed with 21 bins. The paper's
+final spectral-function model configuration uses the first 10 bins, which is the
+configuration provided here.
 
 ## Preprocessing
 
@@ -61,7 +73,7 @@ The output is a signal-like score between 0 and 1.
 `test_models_from_repo.ipynb` demonstrates the minimal workflow for loading the
 included `.h5` files and checking that they produce scores for inputs with the
 correct feature order. The notebook uses
-`examples/model_ready_all_spectral_2000_test_sample.csv`, a small standardized
+`examples/model_ready_10_spectral_2000_test_sample.csv`, a small standardized
 sample from the 2000 GeV test set, and includes a section where users can
 provide their own model-ready, standardized feature table.
 

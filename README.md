@@ -20,14 +20,14 @@ simulation/
   delphes/                Delphes ATLAS card and modified FastJetFinder module
 scripts/                  Batch/helper scripts showing the production flow
 models/
-  all_spectral_bins/
-                           Keras models trained with all 21 spectral bins
+  with_10_spectral_bins/
+                           Keras models trained with the first 10 spectral bins
   feature_schema.json      Input feature ordering for the public models
   model_card.md            Technical model notes
   test_models_from_repo.ipynb
                            Notebook showing how to load and test the models
 examples/
-  model_ready_all_spectral_2000_test_sample.csv
+  model_ready_10_spectral_2000_test_sample.csv
                            Small standardized test sample for model checks
 docs/                     Paper-facing availability text
 ```
@@ -158,23 +158,32 @@ features:
 SpectralFunc0, SpectralFunc1, ..., SpectralFunc20.
 ```
 
-The public trained models included here use 27 inputs: the 21 spectral-function
-bins, the first five leading-jet transverse momenta, and `eventHT`. The required
-feature order is given in `models/feature_schema.json`.
+The final spectral-function models used for the paper use 16 inputs: the first
+10 spectral-function bins, the first five leading-jet transverse momenta, and
+`eventHT`. The required feature order is given in
+`models/feature_schema.json`.
 
 ## Machine-learning models
 
 The public model files are:
 
 ```text
-models/all_spectral_bins/model_1200.h5
-models/all_spectral_bins/model_1600.h5
-models/all_spectral_bins/model_2000.h5
+models/with_10_spectral_bins/model_1000.h5
+models/with_10_spectral_bins/model_1200.h5
+models/with_10_spectral_bins/model_1400.h5
+models/with_10_spectral_bins/model_1600.h5
+models/with_10_spectral_bins/model_1800.h5
+models/with_10_spectral_bins/model_2000.h5
+models/with_10_spectral_bins/model_2200.h5
+models/with_10_spectral_bins/model_2400.h5
+models/with_10_spectral_bins/model_2600.h5
+models/with_10_spectral_bins/model_2800.h5
+models/with_10_spectral_bins/model_3000.h5
 ```
 
 These are TensorFlow/Keras binary classifiers trained for gluino masses of
-1.2, 1.6, and 2.0 TeV against the `ttbar` background, using all 21
-spectral-function bins.
+1.0, 1.2, 1.4, 1.6, 1.8, 2.0, 2.2, 2.4, 2.6, 2.8, and 3.0 TeV against the
+`ttbar` background, using the first 10 spectral-function bins.
 
 The model input ordering is recorded in:
 
@@ -214,8 +223,8 @@ For command-line inference on a model-ready CSV, use:
 
 ```bash
 python models/example_inference.py \
-  --model models/all_spectral_bins/model_2000.h5 \
-  --input examples/model_ready_all_spectral_2000_test_sample.csv \
+  --model models/with_10_spectral_bins/model_2000.h5 \
+  --input examples/model_ready_10_spectral_2000_test_sample.csv \
   --output scored_events.csv
 ```
 
