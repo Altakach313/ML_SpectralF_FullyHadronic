@@ -34,14 +34,16 @@ docs/                     Paper-facing availability text
 
 ## External software
 
-The production workflow used a CERN-style HEP software stack:
+The production workflow used a CERN-style HEP software stack. The main
+generation and simulation versions were:
 
 - MadGraph5_aMC@NLO 3.5.7
-- Pythia 8
-- Delphes
-- ROOT
-- FastJet
-- Python/TensorFlow/Keras for the ML models
+- Pythia 8.311
+- Delphes master branch, downloaded on February 6, 2025
+- ROOT 6.32.06
+- FastJet 3.4.3
+
+Python/TensorFlow/Keras were used for the machine-learning models.
 
 The production environment used:
 
