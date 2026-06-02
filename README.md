@@ -41,7 +41,6 @@ The production workflow used a CERN-style HEP software stack:
 - Delphes
 - ROOT
 - FastJet
-- Eigen
 - Python/TensorFlow/Keras for the ML models
 
 The production environment used:
