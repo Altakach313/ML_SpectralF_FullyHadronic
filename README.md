@@ -45,15 +45,6 @@ generation and simulation versions were:
 
 Python/TensorFlow/Keras were used for the machine-learning models.
 
-The production environment used:
-
-```bash
-VO_ALICE@ROOT::v6-32-06-alice1-15
-VO_ALICE@fastjet::v3.4.1_1.052-alice2-35
-VO_ALICE@pythia::v8311-26
-VO_ALICE@HepMC3::3.3.0-33
-```
-
 Paths in `scripts/run_everything.sh` are configurable through environment
 variables so the workflow can be adapted to another installation.
 
